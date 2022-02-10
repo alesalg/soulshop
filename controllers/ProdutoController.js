@@ -38,6 +38,12 @@ class ProdutoController {
 
         res.redirect("/produtos");
     }
+
+    static async deleteProduto(req, res) {
+        const { id } = req.body;
+        await Produto.findByIdAndDelete(id);
+        res.redirect("/produtos");
+    }
 }
 
 module.exports = ProdutoController;

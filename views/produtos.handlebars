@@ -26,15 +26,18 @@
                     <td>{{this.quantity}}</td>
                     <td>
                         <div class="d-flex">
-                            <div>
+                            <div class="m-1">
                                 <a href="/produtos/editar/{{this._id}}" class="btn btn-sm btn-warning">
                                     <i class="bi bi-pencil"></i>
                                 </a>
                             </div>
-                            <div>
-                                <a href="/produtos/deletar" class="btn btn-sm btn-danger">
-                                    <i class="bi bi-trash"></i>
-                                </a>
+                            <div class="m-1">
+                                <form action="/produtos/deletar" method="POST">
+                                    <input type="hidden" name="id" value="{{this._id}}">
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </td>
