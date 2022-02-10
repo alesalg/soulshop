@@ -1,4 +1,5 @@
 require("dotenv/config"); // definindo variavel de ambiente
+require("./database");  // deinindo variavel database
 
 const express = require("express"); 
 const exprhbs = require("express-handlebars");
@@ -13,7 +14,6 @@ app.engine('handlebars', exprhbs.engine());
 app.set('view engine', "handlebars");
 
 // Rotas
-
 const produtosRoutes = require("./routes/produtosRoutes")
 app.use(produtosRoutes);
 
